@@ -12,8 +12,6 @@ def ssh_command(ip, port, user, passwd, cmd):
     output = stdout.readlines() + stderr.readlines()
     if output:
         print('--- Output ---')
-        # for line in output:
-        #     print(line.strip())
         with open('failed_password_attempts.txt', 'w') as f:
             f.write(str(output))
 
